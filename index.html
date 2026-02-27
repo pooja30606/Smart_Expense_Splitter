@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Expense Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Smart Expense Splitter</h1>
+            <p class="subtitle">Split expenses fairly among friends</p>
+        </header>
+
+        <!-- Add People Section -->
+        <section class="card" id="addPeopleSection">
+            <h2>Add People</h2>
+            <div class="input-group">
+                <input type="text" id="personNameInput" placeholder="Enter person's name" data-testid="person-name-input">
+                <button id="addPersonBtn" class="btn btn-primary" data-testid="add-person-btn">Add Person</button>
+            </div>
+            <div id="peopleList" class="people-list" data-testid="people-list"></div>
+        </section>
+
+        <!-- Add Expense Section -->
+        <section class="card" id="addExpenseSection">
+            <h2>Add Expense</h2>
+            <div class="form-group">
+                <label for="expenseNameInput">Expense Name</label>
+                <input type="text" id="expenseNameInput" placeholder="e.g., Dinner, Movie tickets" data-testid="expense-name-input">
+            </div>
+            <div class="form-group">
+                <label for="expenseAmountInput">Amount (₹)</label>
+                <input type="number" id="expenseAmountInput" placeholder="0" step="0.01" min="0" data-testid="expense-amount-input">
+            </div>
+            <div class="form-group">
+                <label for="paidBySelect">Paid By</label>
+                <select id="paidBySelect" data-testid="paid-by-select">
+                    <option value="">Select person</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Split Among</label>
+                <div id="participantsList" class="participants-list" data-testid="participants-list"></div>
+            </div>
+            <button id="addExpenseBtn" class="btn btn-primary" data-testid="add-expense-btn">Add Expense</button>
+        </section>
+
+        <!-- Expenses List Section -->
+        <section class="card" id="expensesSection">
+            <div class="section-header">
+                <h2>Expenses</h2>
+                <button id="clearAllBtn" class="btn btn-danger-outline" data-testid="clear-all-btn">Clear All</button>
+            </div>
+            <div id="expensesList" class="expenses-list" data-testid="expenses-list">
+                <p class="empty-state">No expenses added yet</p>
+            </div>
+        </section>
+
+        <!-- Settlement Section -->
+        <section class="card" id="settlementSection">
+            <h2>Settlement</h2>
+            <div id="settlementList" class="settlement-list" data-testid="settlement-list">
+                <p class="empty-state">Add expenses to see settlement details</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
